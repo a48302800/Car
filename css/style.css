@@ -1,0 +1,148 @@
+.page-bd {
+    padding-bottom: 200px;
+}
+
+#pin-btn {
+    position: fixed;
+    z-index: 2;
+    width: 50%;
+    left: 25%;
+    bottom: 20px;
+}
+
+.icon-dagou {
+    color: #ef4f4f;
+    font-size: 3em;
+    left: 50%;
+    ;
+    margin-left: -.5em;
+    position: absolute;
+}
+
+
+/*index*/
+
+.container {
+    padding: 0 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container .item {
+    width: 48%;
+    height: 100px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+
+/*在途车辆*/
+
+.icon--phone {
+    font-size: 1em;
+    margin-right: 3px;
+    color: #333;
+    padding: 10px;
+    position: relative;
+    left: 10px;
+}
+
+.shadow {
+    box-shadow: 3px 3px 15px #ccc;
+}
+
+.ac-running {
+    background: #286090;
+    color: #fff;
+}
+
+.ac-running a {
+    color: #fff;
+}
+
+.ac-completion {
+    background: #04be02;
+    color: #fff;
+}
+
+.ac-completion a {
+    color: #fff;
+}
+
+.ac {
+    color: #fff;
+    background: #ef4f4f;
+    font-weight: bold;
+}
+
+.ac a {
+    color: #fff;
+}
+
+.stay-item {}
+
+.weui-form-preview-hd .weui-form-preview-value {
+    font-size: 1.3em;
+}
+
+.weui-form-preview-value {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.weui-form-preview-value i {
+    margin-left: 5px;
+}
+
+.weui-form-preview-bd {
+    padding: 0px 15px;
+    color: #333;
+}
+
+.weui-form-preview-bd p {
+    font-size: 1.1em;
+    line-height: 2.5;
+}
+
+.js-category label {
+    position: relative;
+    font-size: 1.1em;
+}
+
+.preview-label {
+    float: left;
+    min-width: 4em;
+    margin-right: 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.weui-form-preview-hd {
+    line-height: 2em;
+}
+
+.preview-label span {
+    color: #2fd754;
+}
+
+@media (max-width: 320px) {
+    .js-category label {
+        font-size: 1em;
+    }
+    .weui-form-preview-hd .weui-form-preview-value {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    .weui-form-preview-bd p {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+
+
+/*task*/
+
+.order {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="./css/weuix.min.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+<style>
+ .weui-form-preview-bd p{
+     line-height: 2em;
+ }
+</style>
+<body ontouchstart>
+
+    <div class="page-bd">
+        <ul>
+            <!--stay-item-->
+        </ul>
+
+    </div>
+
+    <script src="./js/zepto.min.js"></script>
+    <script>
+        $(function () {
+
+            // 获取未派车辆列表数据
+            // $.getJSON('task.html',{},function(data){
+
+            // });
+
+            for (let i = 0; i <= 10; i++) {
+
+                var _li =
+                    `
+                    <li class="stay-item">
+                        <div class="weui-form-preview-hd js-category ac-completion">
+                            <label class="preview-label"></span>${i+1+" "}车牌/司机</label>
+                            <em class="weui-form-preview-value"><a href="tel:18688888888" class="icon icon--phone"></a>粤E9565/李小明</em>
+                        </div>
+                        <div class="  weui-form-preview-bd">
+                            <p>
+                                <label class="preview-label">业务地点</label>
+                                <span class="weui-form-preview-value">广州白云机场</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">用车事由</label>
+                                <span class="weui-form-preview-value">送北京李总上飞机</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">出车时间</label>
+                                <span class="weui-form-preview-value">2017-7-23 17:20</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">结束时间</label>
+                                <span class="weui-form-preview-value">2017-7-23 21:20</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">航班号/车次</label>
+                                <span class="weui-form-preview-value">E93467912</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">开始里程</label>
+                                <span class="weui-form-preview-value">13453km</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">结束里程</label>
+                                <span class="weui-form-preview-value">13752km</span>
+                            </p>
+                        </div>
+                    </li>`;
+                $('ul').append(_li);
+            }
+
+
+        });
+    </script>
+</body>
+
+</html>

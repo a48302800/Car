@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>未派车辆</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="./css/weuix.min.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+
+<body ontouchstart>
+
+    <div class="page-bd">
+        <a href="javascript:;" id="pin-btn" class="weui_btn weui_btn_primary  hide">拼车</a>
+        <ul>
+            <!--item-list-->
+        </ul>
+
+    </div>
+
+    <script src="./js/zepto.min.js"></script>
+
+    <script>
+        $(function () {
+
+            // 获取未派车辆列表数据
+            // $.getJSON('task.html',{},function(data){
+
+            // });
+
+            for (let i = 0; i <= 20; i++) {
+
+                var _li =
+                    `
+                    <li class="stay-item">
+                        <div class="weui-form-preview-hd js-category ac">
+                            <label class="preview-label"></span>${i+1+" "}车牌/司机</label>
+                            <em class="weui-form-preview-value"><a href="tel:18688888888" class="icon icon--phone"></a>粤E9565/李小明<i class="icon icon-74"></i></em>
+                        </div>
+                        <div class=" weui-form-preview-bd">
+                            <p class='weui-border-b'>
+                                <label class="preview-label">用车人联系方式</label>
+                                <span class="weui-form-preview-value"><a href="tel:18665530278" class="icon icon--phone"></a>18665530278</span>
+                            </p>
+                            <p class='weui-border-b'>
+                                <label class="preview-label">上车地点</label>
+                                <span class="weui-form-preview-value">冠珠展厅门口</span>
+                            </p>
+                            <p class='weui-border-b'>
+                                <label class="preview-label">用车人送达地点</label>
+                                <span class="weui-form-preview-value">广州白云机场</span>
+                            </p>
+                            <p class='weui-border-b'>
+                                <label class="preview-label">出车时间</label>
+                                <span class="weui-form-preview-value">2017-7-23 17:20</span>
+                            </p>
+                            <p class='weui-border-b'>
+                                <label class="preview-label">航班号/车次</label>
+                                <span class="weui-form-preview-value">E93467912</span>
+                            </p>
+                            <p class='weui-border-b'>
+                                <label class="preview-label">航班号/车次到达时间</label>
+                                <span class="weui-form-preview-value">2017-7-26 17:20</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">需要接/送客户联系电话</label>
+                                <span class="weui-form-preview-value"><a href="tel:13398877687" class="icon icon--phone"></a>13398877687</span>
+                            </p>
+                        </div>
+                    </li>`;
+                $('ul').append(_li);
+            }
+
+            // 手风琴及icon状态设定
+            $('.icon--phone').click(function (e) {
+                e.stopPropagation();
+            })
+            // $('.js-category').on('click', 'em', function () {
+            //     $parent = $(this).parent().parent('li');
+            //     if ($parent.hasClass('js-show')) {
+            //         $parent.removeClass('js-show');
+            //         $parent.removeClass('shadow');
+            //         $(this).parent().removeClass('ac');
+            //         $(this).find('i').removeClass('icon-35').addClass('icon-74');
+            //     } else {
+            //         $parent.siblings().removeClass('js-show');
+            //         $parent.addClass('js-show');
+            //         $parent.addClass('shadow').siblings('li').removeClass('shadow')
+            //         $(this).find('i').removeClass('icon-74').addClass('icon-35').parents('li').siblings()
+            //             .find('i').removeClass('icon-35').addClass('icon-74')
+            //         $(this).parent().addClass('ac').parent().siblings().find('div').removeClass('ac');
+            //     }
+            // });
+
+            $('.page-bd ul').on('click', '.js-category>.preview-label', function (e) {
+                e.stopPropagation();
+                if ($(this).find('span').length > 0) {
+                    $(this).find('span').remove();
+                } else {
+                    var tick = '<span class="icon icon-dagou"></span>';
+                    $(this).append(tick)
+                }
+                var tick = $('ul').find('.icon-dagou').length;
+
+                tick > 1 ? $('#pin-btn').show() : $('#pin-btn').hide();
+            })
+        });
+        var bb =
+            `
+            <div style="text-align:left">
+                <p>我我我我</p>
+                <p>不对不对不对不对吧</p>
+            </div>
+            `;
+        $('.page-bd').on("click", "#pin-btn", function () {
+            $.confirm(bb, "请确定拼车信息", function () {
+                $.toast("拼车成功!");
+                // 确定拼车 将订单数据合并后发送到后台
+            }, function () {
+                // 取消操作
+            });
+        });
+    </script>
+</body>
+
+</html>

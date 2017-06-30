@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>在途车辆</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="./css/weuix.min.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+<style>
+.weui_btn_area{
+    margin: 10px;
+}
+
+</style>
+<body ontouchstart style="background-color: #f8f8f8;">
+
+    <div class="page-bd">
+        <ul>
+            <li class="">
+                <div class="weui-form-preview-hd js-category ac-running">
+                    <label class="preview-label">车牌号/出车司机</label>
+                    <em class="weui-form-preview-value"><a href="tel:18688888888" class="icon icon--phone"></a>粤E9565/李明<i class="icon icon-74"></i></em>
+                </div>
+                <div class="weui-form-preview-bd">
+                    <p>
+                        <label class="preview-label">用车人联系方式</label>
+                        <span class="weui-form-preview-value"><a href="tel:18665530278" class="icon icon--phone"></a>18665530278</span>
+                    </p>
+                    <p>
+                        <label class="preview-label">上车地点</label>
+                        <span class="weui-form-preview-value">冠珠展厅门口</span>
+                    </p>
+                    <p>
+                        <label class="preview-label">用车人送达地点</label>
+                        <span class="weui-form-preview-value">广州白云机场</span>
+                    </p>
+                    <p>
+                        <label class="preview-label">出车时间</label>
+                        <span class="weui-form-preview-value">2017-7-23 17:20</span>
+                    </p>
+                    <p>
+                        <label class="preview-label">航班号/车次</label>
+                        <span class="weui-form-preview-value">E93467912</span>
+                    </p>
+                    <p>
+                        <label class="preview-label">航班号/车次到达时间</label>
+                        <span class="weui-form-preview-value">2017-7-26 17:20</span>
+                    </p>
+                    <p>
+                        <label class="preview-label">需要接/送客户联系电话</label>
+                        <span class="weui-form-preview-value"><a href="tel:13398877687" class="icon icon--phone"></a>13398877687</span>
+                    </p>
+                    <div class="weui_btn_area weui_btn_area_inline">
+                        <a href="javascript:;" class="weui_btn weui_btn_primary">拖车</a><a href="javascript:;" class="weui_btn weui_btn_primary">出车</a>
+                    </div>
+                </div>
+            </li>
+       
+
+        </ul>
+    </div>
+
+    <script src="./js/zepto.min.js"></script>
+    <script>
+        $(function () {
+            $('.icon--phone').click(function (e) {
+                e.stopPropagation();
+            })
+            $('.js-category').click(function () {
+                $parent = $(this).parent('li');
+                if ($parent.hasClass('js-show')) {
+                    $parent.removeClass('js-show');
+                    $parent.removeClass('shadow');
+                    // $(this).removeClass('ac-running');
+                    // $(this).find('i').removeClass('icon-35').addClass('icon-74');
+                } else {
+                    $parent.siblings().removeClass('js-show');
+                    $parent.addClass('js-show');
+                    $parent.addClass('shadow').siblings('li').removeClass('shadow')
+                    // $(this).find('i').removeClass('icon-74').addClass('icon-35').parents('li').siblings()
+                        .find('i').removeClass('icon-35').addClass('icon-74')
+                    $(this).addClass('ac-running').parent('li').siblings().find('div').removeClass('ac-running');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

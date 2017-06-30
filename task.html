@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>派车任务</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="./css/weuix.min.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+
+<body ontouchstart>
+
+    <div class="page-bd">
+
+        <ul>
+            <!--stay-item-->
+        </ul>
+
+    </div>
+
+    <script src="./js/zepto.min.js"></script>
+    <script>
+        $(function () {
+
+            for (let i = 0; i < 2; i++) {
+                var _li =
+                    `
+                    <li class="stay-item">
+                        <div class="weui-form-preview-hd js-category">
+                            <label class="preview-label"></span>${i+1+" "}派车单号</label>
+                            <em class="weui-form-preview-value">xxxxxxx</em>
+                        </div>
+                        <div class="page-category  weui-form-preview-bd">
+                            <p>
+                                <label class="preview-label">申请部门</label>
+                                <span class="weui-form-preview-value">行政部</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">申请人员</label>
+                                <span class="weui-form-preview-value"><a href="tel:18665530278" class="icon icon--phone"></a>李某某</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">用车人联系电话</label>
+                                <span class="weui-form-preview-value"><a href="tel:18665530278" class="icon icon--phone"></a>18665530278</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">用车人数</label>
+                                <span class="weui-form-preview-value">6人</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">申请出车时间</label>
+                                <span class="weui-form-preview-value">2017-7-26 17:20</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">用车人到达地点</label>
+                                <span class="weui-form-preview-value">佛山沙堤机场</span>
+                            </p>
+                            <p>
+                                <label class="preview-label">用车事由</label>
+                                <span class="weui-form-preview-value">接送陈总</span>
+                            </p>
+                            <button class="weui_btn weui_btn_primary order">接单</button>
+                        </div>
+                    </li>`;
+                $('ul').append(_li);
+            }
+
+            // 手风琴及icon状态设定
+            $('.icon--phone').click(function (e) {
+                e.stopPropagation();
+            })
+
+            $('.js-category').on('click', 'em', function () {
+                $parent = $(this).parent().parent('li');
+                if ($parent.hasClass('js-show')) {
+                    $parent.removeClass('js-show');
+                    $parent.removeClass('shadow');
+                    $(this).parent().removeClass('ac');
+                    $(this).find('i').removeClass('icon-35').addClass('icon-74');
+                } else {
+                    $parent.siblings().removeClass('js-show');
+                    $parent.addClass('js-show');
+                    $parent.addClass('shadow').siblings('li').removeClass('shadow')
+                    $(this).find('i').removeClass('icon-74').addClass('icon-35').parents('li').siblings()
+                        .find('i').removeClass('icon-35').addClass('icon-74');
+                    $(this).parent().addClass('ac').parent().siblings().find('div').removeClass('ac');
+                }
+            });
+
+
+            // 接单按钮
+            $('.page-category').on('click', '.order', function () {
+                $.confirm("确认接单吗", "接单", function () {
+                    $.toast("接单成功!");
+                    // 确定接单 将订单数据合并后发送到后台
+                }, function () {
+                    // 取消操作
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>
